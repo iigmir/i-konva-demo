@@ -28,7 +28,9 @@
                     draggable: true
                 }"
                 v-bind:ref="e.ref"
-                v-on:dragend="reset_circle" />
+                v-bind:data-money="e.money"
+                v-bind:data-idx="i"
+                v-on:dragend="reset_circle(e.ref)" />
             </v-layer>
         </v-stage>
         <p> Drag to table, then reset to original pos. </p>
@@ -64,8 +66,8 @@ export default {
                 { money: 15, colour:"green",  ref:"bet15ref" },
                 { money: 25, colour:"aqua",   ref:"bet25ref" },
                 { money: 35, colour:"yellow", ref:"bet35ref" },
-                { money: 45, colour:"pink",   ref:"bet45ref" }],
-            bet_basic: 500
+                { money: 45, colour:"pink",   ref:"bet45ref" }
+            ]
         };
     },
     methods:
@@ -74,7 +76,13 @@ export default {
         {
             return 500 + ( pivot * 130 );
         },
-        reset_circle(){}
+        reset_circle( input_ref )
+        {
+            let dom = this.$refs[input_ref][0].getStage();
+            let dom_data = dom.VueComponent.$el.dataset;
+            dom.x( this.got_pos( parseInt( dom_data.idx , 10 ) ) );
+            dom.y( 100 );
+        }
     }
 }
 </script>
