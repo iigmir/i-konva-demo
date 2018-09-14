@@ -1,14 +1,22 @@
 <template>
     <div class="c-container">
-        <v-stage ref="stageref" class="red-circle" v-bind:config="kinit">
-            <v-layer ref="rect1reflayer">
-                <v-rect ref="rect1ref" v-bind:config="rect1"></v-rect>
-            </v-layer>
-            <v-layer ref="circle1reflayer">
-                <v-circle ref="circle1ref" v-bind:config="circle1" v-on:dragend="c1detect"></v-circle>
-            </v-layer>
-        </v-stage>
-        <p v-show="connected"> Connected </p>
+        <div>
+            <v-stage ref="stageref" class="red-circle" v-bind:config="kinit">
+                <v-layer ref="rect1reflayer">
+                    <v-rect ref="rect1ref" v-bind:config="rect1"></v-rect>
+                </v-layer>
+                <v-layer ref="circle1reflayer">
+                    <v-circle ref="circle1ref" v-bind:config="circle2"></v-circle>
+                    <v-circle ref="circle1ref" v-bind:config="circle1" v-on:dragend="c1detect"></v-circle>
+                </v-layer>
+            </v-stage>
+            <p v-show="connected"> Connected </p>
+        </div>
+        <div>
+            <p> To get shape, you need to <a href="https://vuejs.org/v2/api/#ref">assgin reference instance</a>,
+            then use <a href="http://rafaelescala.com/vue-konva-doc/#api">getStage()</a> function.
+            </p>
+        </div>
     </div>
 </template>
 
@@ -27,6 +35,12 @@ export default {
                 radius: 40,
                 fill: "red",
                 draggable: true
+            },
+            circle2: {
+                x: 100,
+                y: 100,
+                radius: 60,
+                fill: "yellow",
             },
             rect1: {
                 x: 500,
@@ -57,13 +71,9 @@ export default {
             let kshape = this.$refs;
             let rech1_layer = kshape.rect1reflayer.getStage();
             let stage_layer = kshape.stageref.getStage();
-            // let rect1_pos = { x:kshape.rect1ref.getStage().x(), y:kshape.rect1ref.getStage().y() };
-            // let stage = this.$refs.stageref.getStage();
-            console.log( stage_layer.getPointerPosition() );
-            console.log( rech1_layer.getIntersection( stage_layer.getPointerPosition() ) );
             this.connected = rech1_layer.getIntersection( stage_layer.getPointerPosition() ) !== null;
-            // rech1_layer.getIntersection( stage_layer.getPointerPosition() )
-            // stage.getPointerPosition()
+            // console.log( stage_layer.getPointerPosition() );
+            // console.log( rech1_layer.getIntersection( stage_layer.getPointerPosition() ) );
         }
     }
 }
