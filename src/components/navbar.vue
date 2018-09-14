@@ -2,7 +2,8 @@
     <nav>
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
-        <router-link to="/proto1">Prototype 1</router-link> 
+        <router-link to="/proto1">Prototype 1</router-link> |
+        <router-link to="/proto2">Prototype 2</router-link> |
     </nav>
 </template>
 

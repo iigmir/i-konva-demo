@@ -75,7 +75,9 @@ export default {
             let height_instage = stage_layer.getPointerPosition().y > 0 && stage_layer.getPointerPosition().y < document.querySelector(".c-container").clientWidth / 3;
             let width_instage = stage_layer.getPointerPosition().x > 0 && stage_layer.getPointerPosition().y < document.querySelector(".c-container").clientWidth;
             this.connected = rech1_layer.getIntersection( stage_layer.getPointerPosition() ) !== null;
-            if( !width_instage || !height_instage ) {
+            console.log( circ1_refer );
+            if( !width_instage || !height_instage )
+            {
                 circ1_refer.x(100);
                 circ1_refer.y(100);
                 circ1_refer.draw();

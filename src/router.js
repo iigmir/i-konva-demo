@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Akamaru from "./views/Akamaru.vue"
+import ToTable from "./views/ToTable.vue"
 
 Vue.use(Router)
 
@@ -21,5 +22,9 @@ export default new Router({
         path: "/proto1",
         name: "proto1",
         component: Akamaru
+    }, {
+        path: "/proto2",
+        name: "proto2",
+        component: ToTable
     }]
 })
