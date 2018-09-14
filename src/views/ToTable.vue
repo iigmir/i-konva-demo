@@ -82,6 +82,7 @@ export default {
             let dom_data = dom.VueComponent.$el.dataset;
             dom.x( this.got_pos( parseInt( dom_data.idx , 10 ) ) );
             dom.y( 100 );
+            dom.draw();
         }
     }
 }

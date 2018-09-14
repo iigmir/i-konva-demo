@@ -70,11 +70,12 @@ export default {
         {
             let kshape = this.$refs;
             let rech1_layer = kshape.rect1reflayer.getStage();
-            let stage_layer = kshape.stageref.getStage();
+            // let stage_layer = kshape.stageref.getStage();
+            let stage_layer_pos = kshape.stageref.getStage().getPointerPosition();
             let circ1_refer = kshape.circle1ref.getStage();
-            let height_instage = stage_layer.getPointerPosition().y > 0 && stage_layer.getPointerPosition().y < document.querySelector(".c-container").clientWidth / 3;
-            let width_instage = stage_layer.getPointerPosition().x > 0 && stage_layer.getPointerPosition().y < document.querySelector(".c-container").clientWidth;
-            this.connected = rech1_layer.getIntersection( stage_layer.getPointerPosition() ) !== null;
+            let height_instage = stage_layer_pos.y > 0 && stage_layer_pos.y < document.querySelector(".c-container").clientWidth / 3;
+            let width_instage = stage_layer_pos.x > 0 && stage_layer_pos.y < document.querySelector(".c-container").clientWidth;
+            this.connected = rech1_layer.getIntersection( stage_layer_pos ) !== null;
             console.log( circ1_refer );
             if( !width_instage || !height_instage )
             {
