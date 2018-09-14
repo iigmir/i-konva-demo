@@ -24,7 +24,7 @@ export default {
             circle1: {
                 x: 100,
                 y: 100,
-                radius: 70,
+                radius: 40,
                 fill: "red",
                 draggable: true
             },
