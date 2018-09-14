@@ -1,14 +1,13 @@
 <template>
     <nav>
         <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">About</router-link> |
+        <router-link to="/proto1">Prototype 1</router-link> 
     </nav>
 </template>
 
 <script>
-export default {
-    name: "navbar"
-}
+export default { name: "navbar" }
 </script>
 
 
