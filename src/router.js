@@ -4,6 +4,7 @@ import Home from "./views/Home.vue"
 import Akamaru from "./views/Akamaru.vue"
 import ToTable from "./views/ToTable.vue"
 import Bkgimg from "./views/Bkgimg.vue"
+import GHouse from "./views/GreatestHouse.vue"
 
 Vue.use(Router)
 
@@ -31,5 +32,9 @@ export default new Router({
         path: "/proto3",
         name: "proto3",
         component: Bkgimg
+    }, {
+        path: "/ghouse",
+        name: "ghouse",
+        component: GHouse
     }]
 })

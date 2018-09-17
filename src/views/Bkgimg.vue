@@ -1,9 +1,6 @@
 <template>
     <div>
         <v-stage ref="currentstage" v-bind:config="{ width: 1200, height: 400 }">
-            <!-- <v-layer ref="shapes">
-                <v-shape v-bind:config="tableset"/>
-            </v-layer> -->
             <v-layer ref="imgs">
                 <v-image v-bind:config="configImg"/>
             </v-layer>
