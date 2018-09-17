@@ -26,7 +26,7 @@ export default {
                     // special Konva.js method
                     context.fillStrokeShape(this);
                 },
-                fill: '#123456',
+                fillPatternImage: "@/assets/apple.jpg"
             },
         };
     },
