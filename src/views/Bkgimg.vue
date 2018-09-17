@@ -37,8 +37,8 @@ export default {
         configImg: function()
         {
             return {
-                x: 20,
-                y: 20,
+                x: 200,
+                y: 40,
                 image: this.background_image,
                 width: 200,
                 height: 200,
