@@ -1,8 +1,11 @@
 <template>
     <div>
         <v-stage ref="currentstage" v-bind:config="{ width: 1200, height: 400 }">
-            <v-layer ref="ajaxtable">
+            <!-- <v-layer ref="shapes">
                 <v-shape v-bind:config="tableset"/>
+            </v-layer> -->
+            <v-layer ref="imgs">
+                <v-image v-bind:config="configImg"/>
             </v-layer>
         </v-stage>
     </div>
@@ -26,12 +29,27 @@ export default {
                     // special Konva.js method
                     context.fillStrokeShape(this);
                 },
-                fillPatternImage: "@/assets/apple.jpg"
             },
+            background_image: new Image(100, 100),
         };
     },
-    methods:
+    computed: {
+        configImg: function()
+        {
+            return {
+                x: 20,
+                y: 20,
+                image: this.background_image,
+                width: 200,
+                height: 200,
+            };
+        }
+    },
+    mounted()
     {
+        this.background_image.src = "https://konvajs.github.io/assets/lion.png";
+        // this.tableset.fillPatternImage = new Image(100, 100);
+        // this.tableset.fillPatternImage.src = "@/assets/apple.jpg";
     }
 }
 </script>
