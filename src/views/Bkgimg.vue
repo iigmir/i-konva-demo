@@ -17,10 +17,10 @@ export default {
             tableset: {
                 sceneFunc: function(context) {
                     context.beginPath();
-                    context.moveTo(200, 50);
-                    context.lineTo(300, 50);
-                    context.lineTo(400, 200);
-                    context.lineTo(100, 200);
+                    context.moveTo(500, 50);
+                    context.lineTo(800, 50);
+                    context.lineTo(1000, 200);
+                    context.lineTo(300, 200);
                     context.closePath();
 
                     // special Konva.js method
