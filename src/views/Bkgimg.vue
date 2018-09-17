@@ -3,6 +3,7 @@
         <v-stage ref="currentstage" v-bind:config="$store.state.canvas_measure">
             <v-layer ref="imgs">
                 <v-image v-bind:config="configImg"/>
+                <!-- <v-image v-bind:config="logo_ing"/> -->
             </v-layer>
         </v-stage>
     </div>
@@ -22,12 +23,11 @@ export default {
                     context.lineTo(1000, 200);
                     context.lineTo(300, 200);
                     context.closePath();
-
-                    // special Konva.js method
                     context.fillStrokeShape(this);
                 },
             },
             background_image: new Image(100, 100),
+            ant_ing: new Image(100, 100)
         };
     },
     computed: {
@@ -40,14 +40,23 @@ export default {
                 width: 200,
                 height: 200,
             };
+        },
+        logo_ing: function()
+        {
+            return {
+                x: 600,
+                y: 40,
+                image: this.ant_ing,
+                width: 200,
+                height: 200,
+            };
         }
     },
     mounted()
     {
         // https://stackoverflow.com/questions/48588800/vue-js-konva-library-to-display-a-simple-image-what-am-i-missing
         this.background_image.src = "https://konvajs.github.io/assets/lion.png";
-        // this.tableset.fillPatternImage = new Image(100, 100);
-        // this.tableset.fillPatternImage.src = "@/assets/apple.jpg";
+        this.ant_ing.src = "@/assets/apple.jpg";
     }
 }
 </script>

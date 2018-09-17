@@ -76,7 +76,6 @@ export default {
             let height_instage = stage_layer_pos.y > 0 && stage_layer_pos.y < document.querySelector(".c-container").clientWidth / 3;
             let width_instage = stage_layer_pos.x > 0 && stage_layer_pos.y < document.querySelector(".c-container").clientWidth;
             this.connected = rech1_layer.getIntersection( stage_layer_pos ) !== null;
-            console.log( circ1_refer );
             if( !width_instage || !height_instage )
             {
                 circ1_refer.x(100);
