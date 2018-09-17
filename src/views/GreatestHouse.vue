@@ -70,7 +70,34 @@ export default {
                 y:130,
                 radius: 10,
                 fill: 'aqua',
-            }]
+            }],
+            door_conf:{
+                x:600,
+                y:130,
+                fill: 'black',
+                sceneFunc: function(context) {
+                    context.beginPath();
+                    context.moveTo(150, 50);
+                    context.quadraticCurveTo(220, 100, 300, 170);
+                    context.moveTo(150, 170);
+                    context.quadraticCurveTo(220, 100, 150, 50);
+                    context.closePath();
+
+                    // special Konva.js method
+                    context.fillStrokeShape(this);
+                },
+            },
+            arc_conf:{
+                x:200,
+                y:100,
+                innerRadius: 40,
+                outerRadius: 80,
+                fill: 'red',
+                stroke: 'black',
+                strokeWidth: 5,
+                angle: 60,
+                rotationDeg: -120
+            }
         };
     },
     computed: {
