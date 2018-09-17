@@ -7,6 +7,7 @@
             </v-layer>
             <v-layer ref="kabe">
                 <v-rect v-bind:config="kabe_conf"/>
+                <v-circle v-for="(e,i) in windows_conf" v-bind:key="i" v-bind:config="e"/>
             </v-layer>
             <v-layer ref="tsuchi"></v-layer>
         </v-stage>
@@ -58,7 +59,18 @@ export default {
                 width: 300,
                 height: 100,
                 fill: "#AA0012",
-            }
+            },
+            windows_conf:[{
+                x:500,
+                y:130,
+                radius: 10,
+                fill: 'aqua',
+            },{
+                x:600,
+                y:130,
+                radius: 10,
+                fill: 'aqua',
+            }]
         };
     },
     computed: {
