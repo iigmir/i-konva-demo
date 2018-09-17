@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-stage ref="currentstage" v-bind:config="{ width: 1200, height: 400 }">
+        <v-stage ref="currentstage" v-bind:config="$store.state.canvas_measure">
             <v-layer ref="imgs">
                 <v-image v-bind:config="configImg"/>
             </v-layer>

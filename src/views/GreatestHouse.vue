@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-stage v-bind:config="{ width: 1200, height: 400 }">
+        <v-stage v-bind:config="$store.state.canvas_measure">
             <v-layer ref="yane">
                 <v-text-path v-bind:config="tp_conf" />
                 <!-- <v-shape v-bind:config="dhouse_conf"/> -->

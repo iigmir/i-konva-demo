@@ -1,7 +1,7 @@
 <template>
     <div class="c-container">
         <div>
-            <v-stage ref="stageref" class="red-circle" v-bind:config="kinit">
+            <v-stage ref="stageref" class="red-circle" v-bind:config="$store.state.canvas_measure">
                 <v-layer ref="rect1reflayer">
                     <v-rect ref="rect1ref" v-bind:config="rect1"></v-rect>
                 </v-layer>

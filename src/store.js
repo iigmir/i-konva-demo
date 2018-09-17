@@ -4,13 +4,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  }
+    state: {
+        canvas_measure: { width: 1200, height: 400 }
+    },
+    mutations: {},
+    actions: {}
 })
