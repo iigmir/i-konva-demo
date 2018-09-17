@@ -2,6 +2,10 @@
     <div id="app">
         <navbar />
         <router-view />
+        <p>未解決問題</p>
+        <ol>
+            <li> 重新繪製不成功：會同時出現兩個圖 </li>
+        </ol>
     </div>
 </template>
 

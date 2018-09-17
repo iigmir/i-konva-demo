@@ -1,7 +1,7 @@
 <template>
     <div class="proto2">
-        <v-stage v-bind:config="{ width: 1200, height: 400 }">
-            <v-layer>
+        <v-stage ref="currentstage" v-bind:config="{ width: 1200, height: 400 }">
+            <v-layer ref="ajaxtable">
                 <v-shape v-bind:config="tableset"/>
             </v-layer>
             <v-layer>
@@ -80,6 +80,10 @@ export default {
         {
             let dom = this.$refs[input_ref][0].getStage();
             let dom_data = dom.VueComponent.$el.dataset;
+            let current_pointer_positison = this.$refs.currentstage.getStage().getPointerPosition();
+            if( this.$refs.ajaxtable.getStage().getIntersection( current_pointer_positison ) !== null ) {
+                alert( dom_data.money + " dollar was sent" );
+            }
             dom.x( this.got_pos( parseInt( dom_data.idx , 10 ) ) );
             dom.y( 100 );
             dom.draw();
