@@ -47,6 +47,7 @@ export default {
     },
     mounted()
     {
+        // https://stackoverflow.com/questions/48588800/vue-js-konva-library-to-display-a-simple-image-what-am-i-missing
         this.background_image.src = "https://konvajs.github.io/assets/lion.png";
         // this.tableset.fillPatternImage = new Image(100, 100);
         // this.tableset.fillPatternImage.src = "@/assets/apple.jpg";
