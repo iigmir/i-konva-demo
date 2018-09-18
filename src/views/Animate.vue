@@ -45,6 +45,7 @@
 import Konva from "konva";
 
 export default {
+    name: "proto4",
     mounted()
     {
         const vm = this;
@@ -62,10 +63,10 @@ export default {
             this.$refs.text.getStage().setText(message);
             this.$refs.layer2.getStage().draw();
         },
-        handleMouseOut(vueComponent, event) {
+        handleMouseOut() {
             this.writeMessage('Mouseout triangle');
         },
-        handleMouseMove(vueComponent, event) {
+        handleMouseMove() {
             const mousePos = this.$refs.stage2.getStage().getPointerPosition();
             const x = mousePos.x - 190;
             const y = mousePos.y - 40;

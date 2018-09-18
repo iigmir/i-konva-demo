@@ -1,11 +1,11 @@
-import Vue from "vue"
-import Router from "vue-router"
-import Home from "./views/Home.vue"
-import Akamaru from "./views/Akamaru.vue"
-import ToTable from "./views/ToTable.vue"
-import Bkgimg from "./views/Bkgimg.vue"
-import GHouse from "./views/GreatestHouse.vue"
-import Animate from "./views/Animate.vue"
+import Vue from "vue";
+import Router from "vue-router";
+import Home from "./views/Home.vue";
+import Kbdevt from "./views/Kbdevt.vue";
+import Bkgimg from "./views/Bkgimg.vue";
+import Akamaru from "./views/Akamaru.vue";
+import Animate from "./views/Animate.vue";
+import GHouse from "./views/GreatestHouse.vue";
 
 Vue.use(Router)
 
@@ -26,10 +26,6 @@ export default new Router({
         name: "proto1",
         component: Akamaru
     }, {
-        path: "/proto2",
-        name: "proto2",
-        component: ToTable
-    }, {
         path: "/proto3",
         name: "proto3",
         component: Bkgimg
@@ -41,5 +37,9 @@ export default new Router({
         path: "/proto4",
         name: "proto4",
         component: Animate
+    }, {
+        path: "/proto5",
+        name: "proto5",
+        component: Kbdevt
     }]
 })
