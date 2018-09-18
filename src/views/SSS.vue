@@ -65,7 +65,7 @@ export default {
             helptext: {
                 x: 90,
                 y: 200,
-                text: "Loaded",
+                text: "You choosed: ",
                 fontSize: 30,
                 fontFamily: 'Calibri',
                 fill: "black"
@@ -81,10 +81,6 @@ export default {
             this.$refs.helptext_ref.getStage().setText( this.choosen_text );
             this.$refs.layer.getStage().draw();
         }
-    },
-    mounted()
-    {
-        this.$refs.helptext_ref.getStage().setText( this.choosen_text );
     }
 }
 </script>
