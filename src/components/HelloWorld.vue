@@ -4,9 +4,14 @@
         <div>
             <v-stage class="red-circle" v-bind:config="$store.state.canvas_measure">
                 <v-layer>
-                    <v-circle v-bind:config="configCircle"></v-circle>
+                    <v-circle v-bind:config="configCircle" />
                     <v-rect v-for="(e,i) in rect_conf" v-bind:key="i" v-bind:config="e" />
+                    <v-star v-bind:config="star_conf" />
                 </v-layer>
+                <!-- <v-layer rel="samsung">
+                    <v-ellipse v-bind:config="samsung.c" />
+                    <v-text v-bind:config="samsung.t" />
+                </v-layer> -->
             </v-stage>
         </div>
     </div>
@@ -28,9 +33,9 @@ export default {
                 x: 100,
                 y: 100,
                 radius: 70,
-                fill: "aqua",
+                fill: "green",
                 stroke: "black",
-                strokeWidth: 4
+                strokeWidth: 2
             },
             rect_conf: [{
                 x: 300,
@@ -48,7 +53,35 @@ export default {
                 fill: "red",
                 rotation: 45,
                 opacity: 0.8
-            }]
+            }],
+            samsung: {
+                c: {
+                    x: 800,
+                    y: 130,
+                    radius: {
+                        x: 180,
+                        y: 60
+                    },
+                    fill: "#034EA2",
+                },
+                t: {
+                    x: 625,
+                    y: 97,
+                    text: "SAMSUNG",
+                    fontSize: 70,
+                    fill: "white"
+                }
+            },
+            star_conf: {
+                x: 600,
+                y: 150,
+                numPoints: 3,
+                innerRadius: 70,
+                outerRadius: 70,
+                fill: 'red',
+                stroke: 'black',
+                strokeWidth: 4
+            }
         };
     }
 }
