@@ -3,7 +3,7 @@
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
         <router-link to="/proto1">Prototype 1</router-link> |
-        <router-link to="/proto3">Prototype 3</router-link> |
+        <!-- <router-link to="/proto3">Prototype 3</router-link> | -->
         <router-link to="/proto4">Prototype 4</router-link> |
         <router-link to="/proto5">Prototype 5</router-link> |
         <router-link to="/ghouse">Greatest house</router-link> |
