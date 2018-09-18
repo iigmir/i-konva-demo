@@ -3,7 +3,7 @@
         <v-stage ref="currentstage" v-bind:config="$store.state.canvas_measure">
             <v-layer ref="imgs">
                 <v-image v-bind:config="configImg"/>
-                <!-- <v-image v-bind:config="logo_ing"/> -->
+                <v-image v-bind:config="logo_ing"/>
             </v-layer>
         </v-stage>
     </div>
@@ -52,7 +52,7 @@ export default {
             };
         }
     },
-    mounted()
+    created()
     {
         // https://stackoverflow.com/questions/48588800/vue-js-konva-library-to-display-a-simple-image-what-am-i-missing
         this.background_image.src = "https://konvajs.github.io/assets/lion.png";

@@ -5,6 +5,7 @@ import Akamaru from "./views/Akamaru.vue"
 import ToTable from "./views/ToTable.vue"
 import Bkgimg from "./views/Bkgimg.vue"
 import GHouse from "./views/GreatestHouse.vue"
+import Animate from "./views/Animate.vue"
 
 Vue.use(Router)
 
@@ -36,5 +37,9 @@ export default new Router({
         path: "/ghouse",
         name: "ghouse",
         component: GHouse
+    }, {
+        path: "/proto4",
+        name: "proto4",
+        component: Animate
     }]
 })
