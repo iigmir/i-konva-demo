@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-stage class="cc" v-bind:config="$store.state.canvas_measure">
-            <v-layer>
+            <v-layer ref="layer">
                 <v-wedge
                     v-for="(e,i) in wedges"
                     v-bind:key="i"
@@ -68,7 +68,7 @@ export default {
                 text: "Loaded",
                 fontSize: 30,
                 fontFamily: 'Calibri',
-                fill: 'green'
+                fill: "black"
             }
         }
     },
@@ -76,12 +76,15 @@ export default {
     {
         chose_text( input )
         {
-            console.log(input);
+            let new_text = this.choosen_text + input + ", ";
+            this.choosen_text = new_text;
+            this.$refs.helptext_ref.getStage().setText( this.choosen_text );
+            this.$refs.layer.getStage().draw();
         }
     },
-    created()
+    mounted()
     {
-        console.log(this.$refs.helptext_ref.getStage());
+        this.$refs.helptext_ref.getStage().setText( this.choosen_text );
     }
 }
 </script>
