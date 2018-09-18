@@ -2,9 +2,10 @@
     <div class="hello">
         <h1>{{ msg }}</h1>
         <div>
-            <v-stage class="red-circle" v-bind:config="configKonva">
+            <v-stage class="red-circle" v-bind:config="$store.state.canvas_measure">
                 <v-layer>
                     <v-circle v-bind:config="configCircle"></v-circle>
+                    <v-rect v-for="(e,i) in rect_conf" v-bind:key="i" v-bind:config="e" />
                 </v-layer>
             </v-stage>
         </div>
@@ -27,10 +28,27 @@ export default {
                 x: 100,
                 y: 100,
                 radius: 70,
-                fill: "red",
+                fill: "aqua",
                 stroke: "black",
                 strokeWidth: 4
-            }
+            },
+            rect_conf: [{
+                x: 300,
+                y: 50,
+                width: 100,
+                height: 100,
+                fill: "blue",
+                rotation: 45,
+                opacity: 0.9
+            },{
+                x: 350,
+                y: 50,
+                width: 100,
+                height: 100,
+                fill: "red",
+                rotation: 45,
+                opacity: 0.8
+            }]
         };
     }
 }
