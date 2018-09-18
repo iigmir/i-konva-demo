@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Kbdevt from "./views/Kbdevt.vue";
+import SSS from "./views/SSS.vue";
 import Bkgimg from "./views/Bkgimg.vue";
 import Akamaru from "./views/Akamaru.vue";
 import Animate from "./views/Animate.vue";
@@ -38,8 +38,8 @@ export default new Router({
         name: "proto4",
         component: Animate
     }, {
-        path: "/proto5",
-        name: "proto5",
-        component: Kbdevt
+        path: "/sss",
+        name: "sss",
+        component: SSS
     }]
 })

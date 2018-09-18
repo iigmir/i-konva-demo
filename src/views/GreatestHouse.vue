@@ -18,7 +18,7 @@
 
 <script>
 export default {
-    name: "proto3",
+    name: "ghouse",
     data()
     {
         return {
