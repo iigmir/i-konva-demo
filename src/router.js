@@ -38,8 +38,8 @@ export default new Router({
         name: "proto4",
         component: Animate
     }, {
-        path: "/sss",
-        name: "sss",
+        path: "/simon",
+        name: "simon",
         component: SSS
     }]
 })

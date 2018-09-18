@@ -30,7 +30,7 @@
 
 <script>
 export default {
-    name:"SSS",
+    name: "simon",
     data()
     {
         return {
