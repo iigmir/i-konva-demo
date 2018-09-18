@@ -66,7 +66,7 @@ export default {
                 x: 90,
                 y: 200,
                 text: "You choosed: ",
-                fontSize: 30,
+                fontSize: 24,
                 fontFamily: 'Calibri',
                 fill: "black"
             }
