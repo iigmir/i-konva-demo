@@ -160,6 +160,7 @@ export default {
             dom.x( this.got_pos( parseInt( dom_data.idx , 10 ) ) );
             dom.y( 100 );
             dom.draw();
+            this.$refs.rect1reflayer.getStage().draw();
         }
     }
 }
