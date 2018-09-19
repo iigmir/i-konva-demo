@@ -164,8 +164,7 @@ export default {
         {
             let display_text = "Let's choose: ";
             this.questiontext_array.map( x => display_text += x );
-            this.$refs.questiontext_ref.getStage().setText( display_text );
-            this.$refs.layer.getStage().draw();
+            this.render_text({ refered_element: "questiontext_ref" , input_text: display_text });
         }
     }
 }
