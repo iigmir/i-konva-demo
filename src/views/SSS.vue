@@ -144,8 +144,12 @@ export default {
             let choose_same_elem = this.choosen_array[current_pos] === this.questiontext_array[current_pos];
             if( choose_same_elem )
             {
+                if( current_pos === this.questiontext_array.length - 1 )
+                {
+                    this.clear_choosen();
+                    this.add_question_ingame();
+                }
                 this.render_helptext();
-                this.add_question_ingame();
             }
             else
             {
