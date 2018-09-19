@@ -103,12 +103,12 @@ export default {
             },
             tp_conf:{
                 x: 0,
-                y: 50,
+                y: 10,
                 fill: '#333',
                 fontSize: 16,
                 fontFamily: 'Arial',
-                text: 'All the world\'s a stage, and all the men and women merely players.',
-                data: 'M10,10 C0,0 10,150 100,100 S300,150 400,50'
+                text: "All the world's a stage, and all the men and women merely players.",
+                data: 'M5,12 C0,0 10,150 100,100 S300,150 400,50'
             }
         };
     },
