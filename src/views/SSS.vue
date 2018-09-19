@@ -24,7 +24,7 @@
                     v-on:mouseout="cursor_change('default')"
                 />
                 <v-text ref="helptext_ref" v-bind:config="helptext" />
-                <v-text ref="gametext_ref" v-bind:config="gametext" />
+                <v-text ref="questiontext_ref" v-bind:config="questiontext_conf" />
             </v-layer>
         </v-stage>
     </div>
@@ -86,7 +86,7 @@ export default {
                 fontFamily: 'Calibri',
                 fill: "black"
             },
-            gametext: {
+            questiontext_conf: {
                 x: 90,
                 y: 200,
                 text: "Let's choose: ",
@@ -111,8 +111,8 @@ export default {
                 },
                 fill: 'aqua',
             },
-            game_text:[],
-            correct_count:0
+            questiontext_array:[],
+            questiontext_correct_count:0
         }
     },
     methods:
@@ -137,6 +137,10 @@ export default {
         cursor_change( input )
         {
             document.body.style.cursor = input;
+        },
+        random_game()
+        {
+            //
         }
     }
 }
