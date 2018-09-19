@@ -168,10 +168,18 @@ export default {
         },
         clear_text()
         {
+            this.clear_choosen();
+            this.clear_question();
+        },
+        clear_choosen()
+        {
             this.choosen_array = [];
-            this.questiontext_array = [];
             this.render_helptext();
-            this.render_questiontext();
+            
+        },
+        clear_question()
+        {
+            this.questiontext_array = [];
             this.add_question_ingame();
         },
         render_text({ refered_element, input_text })
