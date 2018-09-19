@@ -115,6 +115,15 @@ export default {
             questiontext_array:[],
         }
     },
+    computed:
+    {
+        all_colour()
+        {
+            let colour_array = [];
+            this.wedges.map( x => colour_array.push( x.data_ref ) );
+            return colour_array;
+        }
+    },
     mounted()
     {
         this.add_question_ingame();
@@ -124,10 +133,7 @@ export default {
         add_question_ingame()
         {
             let colour_array_rand = ( max ) => Math.floor( Math.random() * Math.floor( max ) );
-            let colour_array = [];
-            let random_txt = "";
-            this.wedges.map( x => colour_array.push( x.data_ref ) );
-            random_txt = colour_array[ colour_array_rand( colour_array.length ) ];
+            let random_txt = this.all_colour[ colour_array_rand( this.all_colour.length ) ];
             this.questiontext_array.push( random_txt );
             this.render_questiontext();
         },
