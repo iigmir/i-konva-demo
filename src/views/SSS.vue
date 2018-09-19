@@ -175,7 +175,6 @@ export default {
         {
             this.choosen_array = [];
             this.render_helptext();
-            
         },
         clear_question()
         {
