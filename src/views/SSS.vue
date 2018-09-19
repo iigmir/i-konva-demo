@@ -115,6 +115,10 @@ export default {
             questiontext_correct_count:0
         }
     },
+    mounted()
+    {
+        this.add_question_ingame();
+    },
     methods:
     {
         chose_text( input )
@@ -125,13 +129,21 @@ export default {
         {
             let new_text = this.choosen_text + input + ", ";
             this.choosen_text = new_text;
-            this.$refs.helptext_ref.getStage().setText( this.choosen_text );
-            this.$refs.layer.getStage().draw();
+            this.render_text({ refered_element: "helptext_ref" , input_text: this.choosen_text });
+        },
+        clear_text()
+        {
+            this.clear_choosen_text();
         },
         clear_choosen_text()
         {
             this.choosen_text = "You choosed: ";
-            this.$refs.helptext_ref.getStage().setText( this.choosen_text );
+            this.render_text({ refered_element: "helptext_ref" , input_text: "You choosed: " });
+        },
+        render_text({ refered_element, input_text })
+        {
+            let refes = this.$refs[refered_element];
+            refes.getStage().setText( input_text );
             this.$refs.layer.getStage().draw();
         },
         cursor_change( input )
@@ -146,13 +158,14 @@ export default {
             this.wedges.map( x => colour_array.push( x.data_ref ) );
             random_txt = colour_array[ colour_array_rand( colour_array.length ) ];
             this.questiontext_array.push( random_txt );
+            this.render_questiontext();
         },
         render_questiontext()
         {
             let display_text = "Let's choose: ";
             this.questiontext_array.map( x => display_text += x );
-            // this.$refs.helptext_ref.getStage().setText( this.choosen_text );
-            // this.$refs.layer.getStage().draw();
+            this.$refs.questiontext_ref.getStage().setText( display_text );
+            this.$refs.layer.getStage().draw();
         }
     }
 }
