@@ -12,14 +12,14 @@
                 />
                 <v-ellipse
                     v-bind:config="btn_conf"
-                    v-on:click="clear_choosen_text()"
+                    v-on:click="clear_text()"
                     v-on:mouseover="cursor_change('pointer')"
                     v-on:mouseout="cursor_change('default')"
                 />
                 <v-text
                     ref="btntxt_ref"
                     v-bind:config="btntxt_conf"
-                    v-on:click="clear_choosen_text()"
+                    v-on:click="clear_text()"
                     v-on:mouseover="cursor_change('pointer')"
                     v-on:mouseout="cursor_change('default')"
                 />
@@ -78,6 +78,7 @@ export default {
                 data_ref:"yellow"
             }],
             choosen_text: "You choosed: ",
+            choosen_array: [],
             helptext: {
                 x: 90,
                 y: 240,
@@ -112,7 +113,6 @@ export default {
                 fill: 'aqua',
             },
             questiontext_array:[],
-            questiontext_correct_count:0
         }
     },
     mounted()
@@ -121,24 +121,41 @@ export default {
     },
     methods:
     {
+        add_question_ingame()
+        {
+            let colour_array_rand = ( max ) => Math.floor( Math.random() * Math.floor( max ) );
+            let colour_array = [];
+            let random_txt = "";
+            this.wedges.map( x => colour_array.push( x.data_ref ) );
+            random_txt = colour_array[ colour_array_rand( colour_array.length ) ];
+            this.questiontext_array.push( random_txt );
+            this.render_questiontext();
+        },
         chose_text( input )
         {
-            this.render_helptext( input );
+            this.choosen_array.push( input );
+            this.render_helptext();
         },
-        render_helptext( input )
+        render_helptext()
         {
-            let new_text = this.choosen_text + input + ", ";
-            this.choosen_text = new_text;
+            let display_text = "You choosed: ";
+            this.choosen_array.map( x => display_text += x + ", " );
+            this.choosen_text = display_text;
             this.render_text({ refered_element: "helptext_ref" , input_text: this.choosen_text });
+        },
+        render_questiontext()
+        {
+            let display_text = "Let's choose: ";
+            this.questiontext_array.map( x => display_text += x );
+            this.render_text({ refered_element: "questiontext_ref" , input_text: display_text });
         },
         clear_text()
         {
-            this.clear_choosen_text();
-        },
-        clear_choosen_text()
-        {
-            this.choosen_text = "You choosed: ";
-            this.render_text({ refered_element: "helptext_ref" , input_text: "You choosed: " });
+            this.choosen_array = [];
+            this.questiontext_array = [];
+            this.render_helptext();
+            this.render_questiontext();
+            this.add_question_ingame();
         },
         render_text({ refered_element, input_text })
         {
@@ -150,22 +167,6 @@ export default {
         {
             document.body.style.cursor = input;
         },
-        add_question_ingame()
-        {
-            let colour_array_rand = ( max ) => Math.floor( Math.random() * Math.floor( max ) );
-            let colour_array = [];
-            let random_txt = "";
-            this.wedges.map( x => colour_array.push( x.data_ref ) );
-            random_txt = colour_array[ colour_array_rand( colour_array.length ) ];
-            this.questiontext_array.push( random_txt );
-            this.render_questiontext();
-        },
-        render_questiontext()
-        {
-            let display_text = "Let's choose: ";
-            this.questiontext_array.map( x => display_text += x );
-            this.render_text({ refered_element: "questiontext_ref" , input_text: display_text });
-        }
     }
 }
 </script>
