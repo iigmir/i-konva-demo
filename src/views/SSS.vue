@@ -14,13 +14,15 @@
                     v-bind:config="btn_conf"
                     v-on:click="clear_text()"
                     v-on:mouseover="cursor_change('pointer')"
-                    v-on:mouseout="cursor_change('default')" />
+                    v-on:mouseout="cursor_change('default')"
+                />
                 <v-text
                     ref="btntxt_ref"
                     v-bind:config="btntxt_conf"
                     v-on:click="clear_text()"
                     v-on:mouseover="cursor_change('pointer')"
-                    v-on:mouseout="cursor_change('default')" />
+                    v-on:mouseout="cursor_change('default')"
+                />
                 <v-text ref="helptext_ref" v-bind:config="helptext" />
                 <v-text ref="gametext_ref" v-bind:config="gametext" />
             </v-layer>
