@@ -12,19 +12,19 @@
                 />
                 <v-ellipse
                     v-bind:config="btn_conf"
-                    v-on:click="clear_text()"
+                    v-on:click="clear_choosen_text()"
                     v-on:mouseover="cursor_change('pointer')"
                     v-on:mouseout="cursor_change('default')"
                 />
                 <v-text
                     ref="btntxt_ref"
                     v-bind:config="btntxt_conf"
-                    v-on:click="clear_text()"
+                    v-on:click="clear_choosen_text()"
                     v-on:mouseover="cursor_change('pointer')"
                     v-on:mouseout="cursor_change('default')"
                 />
-                <v-text ref="helptext_ref" v-bind:config="helptext" />
                 <v-text ref="questiontext_ref" v-bind:config="questiontext_conf" />
+                <v-text ref="helptext_ref" v-bind:config="helptext" />
             </v-layer>
         </v-stage>
     </div>
@@ -119,16 +119,16 @@ export default {
     {
         chose_text( input )
         {
-            this.render_help( input );
+            this.render_helptext( input );
         },
-        render_help( input )
+        render_helptext( input )
         {
             let new_text = this.choosen_text + input + ", ";
             this.choosen_text = new_text;
             this.$refs.helptext_ref.getStage().setText( this.choosen_text );
             this.$refs.layer.getStage().draw();
         },
-        clear_text()
+        clear_choosen_text()
         {
             this.choosen_text = "You choosed: ";
             this.$refs.helptext_ref.getStage().setText( this.choosen_text );
@@ -138,9 +138,21 @@ export default {
         {
             document.body.style.cursor = input;
         },
-        random_game()
+        add_question_ingame()
         {
-            //
+            let colour_array_rand = ( max ) => Math.floor( Math.random() * Math.floor( max ) );
+            let colour_array = [];
+            let random_txt = "";
+            this.wedges.map( x => colour_array.push( x.data_ref ) );
+            random_txt = colour_array[ colour_array_rand( colour_array.length ) ];
+            this.questiontext_array.push( random_txt );
+        },
+        render_questiontext()
+        {
+            let display_text = "Let's choose: ";
+            this.questiontext_array.map( x => display_text += x );
+            // this.$refs.helptext_ref.getStage().setText( this.choosen_text );
+            // this.$refs.layer.getStage().draw();
         }
     }
 }
