@@ -9,6 +9,8 @@
             <v-layer ref="kabe">
                 <v-rect v-bind:config="kabe_conf"/>
                 <v-circle v-for="(e,i) in windows_conf" v-bind:key="i" v-bind:config="e"/>
+                <v-wedge v-bind:config="door_window_conf" />
+                <v-rect v-bind:config="door_conf"/>
             </v-layer>
             <v-layer ref="tsuchi"></v-layer>
         </v-stage>
@@ -72,21 +74,21 @@ export default {
                 radius: 10,
                 fill: 'aqua',
             }],
-            door_conf:{
-                x:600,
-                y:130,
-                fill: 'black',
-                sceneFunc: function(context) {
-                    context.beginPath();
-                    context.moveTo(150, 50);
-                    context.quadraticCurveTo(220, 100, 300, 170);
-                    context.moveTo(150, 170);
-                    context.quadraticCurveTo(220, 100, 150, 50);
-                    context.closePath();
-
-                    // special Konva.js method
-                    context.fillStrokeShape(this);
-                },
+            door_window_conf:{
+                x: 550,
+                y: 150,
+                radius: 12,
+                angle: 180,
+                fill: 'white',
+                rotation: 180,
+                data_ref:"red"
+            },
+            door_conf: {
+                x: 538,
+                y: 150,
+                width: 24,
+                height: 50,
+                fill: "white",
             },
             arc_conf:{
                 x:200,
