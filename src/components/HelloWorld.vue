@@ -7,6 +7,7 @@
                     <v-circle v-bind:config="configCircle" />
                     <v-rect v-for="(e,i) in rect_conf" v-bind:key="i" v-bind:config="e" />
                     <v-star v-bind:config="star_conf" />
+                    <v-image v-bind:config="img_conf" />
                 </v-layer>
                 <!-- <v-layer rel="samsung">
                     <v-ellipse v-bind:config="samsung.c" />
@@ -83,6 +84,16 @@ export default {
                 strokeWidth: 4
             }
         };
+    },
+    computed:
+    {
+        img_conf()
+        {
+            let img = new Image();
+            img.src = "../assets/logo.png";
+            console.log(img);
+            return { x: 600, y: 120, image: img };
+        }
     }
 }
 </script>

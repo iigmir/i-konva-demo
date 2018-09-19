@@ -7,7 +7,7 @@
             <ol>
                 <li> 重新繪製不成功：會同時出現兩個圖 </li>
                 <li> 無法針對形狀使用本地圖像如：<code>@/assets/image.jpg</code> </li>
-                <li> How to draw half circle? </li>
+                <li> <del>How to draw half circle?</del> <code>v-wedge</code>, with <code>rotation: 180</code> </li>
                 <li> Konva 無法監聽鍵盤事件 </li>
             </ol>
         </div>
