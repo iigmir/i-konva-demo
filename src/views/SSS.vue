@@ -85,7 +85,7 @@ export default {
                 text: "You choosed: ",
                 fontSize: 24,
                 fontFamily: 'Calibri',
-                fill: "black"
+                fill: "white"
             },
             questiontext_conf: {
                 x: 90,
