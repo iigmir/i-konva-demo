@@ -140,7 +140,18 @@ export default {
         chose_text( input )
         {
             this.choosen_array.push( input );
-            this.render_helptext();
+            let current_pos = this.choosen_array.length - 1;
+            let choose_same_elem = this.choosen_array[current_pos] === this.questiontext_array[current_pos];
+            if( choose_same_elem )
+            {
+                this.render_helptext();
+                this.add_question_ingame();
+            }
+            else
+            {
+                alert("Wrong choose");
+                this.clear_text();
+            }
         },
         render_helptext()
         {
@@ -152,7 +163,7 @@ export default {
         render_questiontext()
         {
             let display_text = "Let's choose: ";
-            this.questiontext_array.map( x => display_text += x );
+            this.questiontext_array.map( x => display_text += x + ", " );
             this.render_text({ refered_element: "questiontext_ref" , input_text: display_text });
         },
         clear_text()
