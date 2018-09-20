@@ -2,7 +2,13 @@
     <div>
         <v-stage v-bind:config="$store.state.canvas_measure">
             <v-layer ref="larry_layer">
-                <v-image ref="larry" v-bind:config="larry_conf" />
+                <v-image
+                    ref="larry"
+                    v-bind:config="larry_conf"
+                    v-on:mouseover="cursor_change('pointer')"
+                    v-on:mouseout="cursor_change('default')"
+                    v-on:click="yougotme()"
+                />
             </v-layer>
             <v-layer ref="yane">
                 <v-text-path v-bind:config="tp_conf" />
@@ -16,9 +22,9 @@
                 <v-wedge v-bind:config="door_window_conf" />
                 <v-rect v-bind:config="door_conf"/>
             </v-layer>
-            
         </v-stage>
         <p> Reference of <code>v-text-path</code>: <a target="_blank" href="https://hellopoetry.com/poem/2609113/house-of-broken-dreams/"> House of Broken Dreams </a> </p>
+        <p> Source of Bob the yellow guy: <a target="_blank" href="https://commons.wikimedia.org/wiki/File:Bob2002.svg"> Wikimedia Commons </a> </p>
         <!-- https://www.html5rocks.com/zh/tutorials/canvas/performance/ -->
     </div>
 </template>
@@ -148,5 +154,16 @@ export default {
         }, this.$refs.larry_layer.getStage());
         anim.start();
     },
+    methods:
+    {
+        cursor_change( input )
+        {
+            document.body.style.cursor = input;
+        },
+        yougotme()
+        {
+            alert("Bob 被抓到了");
+        }
+    }
 }
 </script>
