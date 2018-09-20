@@ -24,6 +24,19 @@
                             v-bind:config="t"
                         />
                     </v-group>
+                    <!-- <v-line v-bind:config="{
+                        x: 100,
+                        y: 50,
+                        points: [
+                            73, 70,
+                            340, 23,
+                            450, 60,
+                            500, 20,
+                            690, 120
+                        ],
+                        stroke: 'red',
+                        tension: 1
+                    }" /> -->
                 </v-layer>
             </v-stage>
         </div>
