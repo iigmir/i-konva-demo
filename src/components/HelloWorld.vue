@@ -44,6 +44,13 @@
                         text: '萬',
                         fill: 'red'
                     }" />
+                    <v-group>
+                        <v-regular-polygon
+                            v-for="(t,i) in vue_triangle"
+                            v-bind:key="i"
+                            v-bind:config="t"
+                        />
+                    </v-group>
                 </v-layer>
             </v-stage>
         </div>
@@ -58,10 +65,6 @@ export default {
     },
     data() {
         return {
-            configKonva: {
-                width: 200,
-                height: 200,
-            },
             configCircle: {
                 x: 100,
                 y: 100,
@@ -87,24 +90,29 @@ export default {
                 rotation: 45,
                 opacity: 0.8
             }],
-            samsung: {
-                c: {
-                    x: 800,
-                    y: 130,
-                    radius: {
-                        x: 180,
-                        y: 60
-                    },
-                    fill: "#034EA2",
-                },
-                t: {
-                    x: 625,
-                    y: 97,
-                    text: "SAMSUNG",
-                    fontSize: 70,
-                    fill: "white"
-                }
-            },
+            vue_triangle:
+            [{
+                x: 780,
+                y: 120,
+                sides: 3,
+                radius: 80,
+                rotation: 60,
+                fill: 'green',
+            },{
+                x: 780,
+                y: 105,
+                sides: 3,
+                radius: 50,
+                rotation: 60,
+                fill: 'black',
+            },{
+                x: 780,
+                y: 90,
+                sides: 3,
+                radius: 20,
+                rotation: 60,
+                fill: 'white',
+            }],
             star_conf: {
                 x: 600,
                 y: 150,
