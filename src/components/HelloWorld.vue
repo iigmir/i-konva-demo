@@ -37,6 +37,19 @@
                         stroke: 'red',
                         tension: 1
                     }" /> -->
+                    <v-line v-bind:config="{
+                        x: 50,
+                        y: 50,
+                        points: [
+                            50, 50,
+                            50, 100,
+                            100, 100,
+                            100, 50,
+                            50, 50
+                        ],
+                        stroke: 'red',
+                        tension: 1
+                    }" /> 
                 </v-layer>
             </v-stage>
         </div>
