@@ -10,6 +10,10 @@
                     v-on:mouseover="cursor_change('pointer')"
                     v-on:mouseout="cursor_change('default')"
                 />
+                <v-text ref="questiontext_ref" v-bind:config="questiontext_conf" />
+                <v-text ref="helptext_ref" v-bind:config="helptext" />
+            </v-layer>
+            <v-layer ref="central_clearbtn_layer">
                 <v-circle v-bind:config="{
                     x:100,
                     y:100,
@@ -17,10 +21,14 @@
                     fill: 'navy',
                     stroke: '#ddd',
                     strokeWidth: 4
-                    
                 }" />
-                <v-text ref="questiontext_ref" v-bind:config="questiontext_conf" />
-                <v-text ref="helptext_ref" v-bind:config="helptext" />
+                <v-text v-bind:config="{
+                    x: 65,
+                    y: 90,
+                    text: 'Simon',
+                    fontSize: 24,
+                    fill: 'white'
+                }" />
             </v-layer>
             <v-layer ref="clearbtn_layer">
                 <v-ellipse
