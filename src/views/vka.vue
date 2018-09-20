@@ -56,6 +56,11 @@
         }" /&gt;
     &lt;/v-layer&gt;
 &lt;/v-stage&gt; </pre> </li>
+            <li>
+                使用 <a target="_blank" href="https://vuejs.org/v2/api/#ref">ref</a> 屬性來參照形狀。 <br />
+                例如聲明 <code>&lt;v-star ref="foobar"&gt;</code> 的話，就可以在 JavaScript 這麼參照： <code>this.$refs.foobar</code>。 <br />
+                這樣一來，就可以在必要時，透過 <code>getStage()</code> 動用需要的形狀內建函式了。
+            </li>
             <li> 形狀支援還不夠完整，但也足夠撰寫一些基本形狀：
                 <ul>
                     <li>v-rect: 四方形</li>
