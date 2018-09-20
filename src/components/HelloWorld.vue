@@ -44,12 +44,7 @@
                         text: '萬',
                         fill: 'red'
                     }" />
-                    <!-- <v-image v-bind:config="img_conf" /> -->
                 </v-layer>
-                <!-- <v-layer rel="samsung">
-                    <v-ellipse v-bind:config="samsung.c" />
-                    <v-text v-bind:config="samsung.t" />
-                </v-layer> -->
             </v-stage>
         </div>
     </div>

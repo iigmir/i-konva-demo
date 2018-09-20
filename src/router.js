@@ -6,6 +6,7 @@ import Bkgimg from "./views/Bkgimg.vue";
 import Akamaru from "./views/Akamaru.vue";
 import Animate from "./views/Animate.vue";
 import GHouse from "./views/GreatestHouse.vue";
+import VKA from "./views/vka.vue";
 
 Vue.use(Router)
 
@@ -41,5 +42,9 @@ export default new Router({
         path: "/simon",
         name: "simon",
         component: SSS
+    }, {
+        path: "/vuekonva",
+        name: "vuekonva",
+        component: VKA
     }]
 })

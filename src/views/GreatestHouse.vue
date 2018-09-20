@@ -14,6 +14,7 @@
             </v-layer>
             <v-layer ref="tsuchi"></v-layer>
         </v-stage>
+        <p> Reference of <code>v-text-path</code>: <a target="_blank" href="https://hellopoetry.com/poem/2609113/house-of-broken-dreams/"> House of Broken Dreams </a> </p>
         <!-- https://www.html5rocks.com/zh/tutorials/canvas/performance/ -->
     </div>
 </template>
@@ -101,14 +102,14 @@ export default {
                 angle: 60,
                 rotationDeg: -120
             },
-            tp_conf:{
+            tp_conf: {
                 x: 0,
                 y: 10,
                 fill: '#333',
                 fontSize: 16,
                 fontFamily: 'Arial',
-                text: "All the world's a stage, and all the men and women merely players.",
-                data: 'M5,12 C0,0 10,150 100,100 S300,150 400,50'
+                text: "This two-story building made out of bricks is a place that should not...",
+                data: 'M5,12 C0,0 10,150 120,100 S350,120 400,50'
             }
         };
     },
