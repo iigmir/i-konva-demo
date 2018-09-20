@@ -4,47 +4,20 @@
         <div>
             <v-stage class="red-circle" v-bind:config="$store.state.canvas_measure">
                 <v-layer>
-                    <v-circle v-bind:config="configCircle" />
-                    <v-text ref="ktext" :config="{
-                        x: 60, y: 50, fontSize: 108,
-                        text: 'K',
-                        fill: 'white'
-                    }" />
+                    <v-group ref="konvalogo">
+                        <v-circle v-bind:config="configCircle" />
+                        <v-text ref="ktext" v-bind:config="{
+                            x: 900, y: 50, fontSize: 108,
+                            text: 'K',
+                            fill: 'white'
+                        }" />
+                    </v-group>
                     <v-rect v-for="(e,i) in rect_conf" v-bind:key="i" v-bind:config="e" />
-                    <v-star v-bind:config="{
-                        x: 600,
-                        y: 150,
-                        numPoints: 3,
-                        innerRadius: 70,
-                        outerRadius: 70,
-                        fill: 'red',
-                    }" />
-                    <v-star v-bind:config="{
-                        x: 600,
-                        y: 150,
-                        numPoints: 3,
-                        innerRadius: 50,
-                        outerRadius: 50,
-                        fill: 'red',
-                        stroke: 'white',
-                        strokeWidth: 4
-                    }" />
-                    <v-star v-bind:config="{
-                        x: 600,
-                        y: 150,
-                        numPoints: 3,
-                        innerRadius: 48,
-                        outerRadius: 48,
-                        fill: 'white',
-                        stroke: 'red',
-                        strokeWidth: 4
-                    }" />
-                    <v-text ref="ktext" :config="{
-                        x: 564, y: 116, fontSize: 72,
-                        text: '萬',
-                        fill: 'red'
-                    }" />
-                    <v-group>
+                    <v-group ref="kikkumanlogo">
+                        <v-star v-for="(e,i) in kiuuman_kado" v-bind:key="i" v-bind:config="e" />
+                        <v-text ref="ktext" v-bind:config="kiuuman_text" />
+                    </v-group>
+                    <v-group ref="vuelogo">
                         <v-regular-polygon
                             v-for="(t,i) in vue_triangle"
                             v-bind:key="i"
@@ -66,14 +39,15 @@ export default {
     data() {
         return {
             configCircle: {
-                x: 100,
+                x: 940,
                 y: 100,
                 radius: 70,
                 fill: "green",
                 stroke: "black",
                 strokeWidth: 2
             },
-            rect_conf: [{
+            rect_conf:
+            [{
                 x: 300,
                 y: 50,
                 width: 100,
@@ -113,15 +87,39 @@ export default {
                 rotation: 60,
                 fill: 'white',
             }],
-            star_conf: {
+            kiuuman_kado:
+            [{
                 x: 600,
                 y: 150,
                 numPoints: 3,
                 innerRadius: 70,
                 outerRadius: 70,
                 fill: 'red',
-                stroke: 'black',
+            },{
+                x: 600,
+                y: 150,
+                numPoints: 3,
+                innerRadius: 50,
+                outerRadius: 50,
+                fill: 'red',
+                stroke: 'white',
                 strokeWidth: 4
+            },{
+                x: 600,
+                y: 150,
+                numPoints: 3,
+                innerRadius: 48,
+                outerRadius: 48,
+                fill: 'white',
+                stroke: 'red',
+                strokeWidth: 4
+            }],
+            kiuuman_text:{
+                x: 564,
+                y: 116,
+                fontSize: 72,
+                text: '萬',
+                fill: 'red'
             }
         };
     },
