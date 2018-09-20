@@ -112,11 +112,6 @@ export default {
                 data: 'M5,12 C0,0 10,150 120,100 S350,120 400,50'
             }
         };
-    },
-    computed: {
-    },
-    mounted()
-    {
     }
 }
 </script>
