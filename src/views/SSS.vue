@@ -10,6 +10,15 @@
                     v-on:mouseover="cursor_change('pointer')"
                     v-on:mouseout="cursor_change('default')"
                 />
+                <v-circle v-bind:config="{
+                    x:100,
+                    y:100,
+                    radius: 40,
+                    fill: 'navy',
+                    stroke: 'white',
+                    strokeWidth: 4
+                    
+                }" />
                 <v-text ref="questiontext_ref" v-bind:config="questiontext_conf" />
                 <v-text ref="helptext_ref" v-bind:config="helptext" />
             </v-layer>
@@ -44,37 +53,37 @@ export default {
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(255,0,0,1)',
-                stroke: 'black',
+                stroke: 'white',
                 strokeWidth: 1,
                 rotation: 180,
                 data_ref:"red"
             },{
-                x: 104,
+                x: 100,
                 y: 100,
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(0,255,0,1)',
-                stroke: 'black',
+                stroke: 'white',
                 strokeWidth: 1,
                 rotation: 270,
                 data_ref:"green"
             },{
-                x: 104,
-                y: 104,
+                x: 100,
+                y: 100,
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(0,0,255,1)',
-                stroke: 'black',
+                stroke: 'white',
                 strokeWidth: 1,
                 rotation: 0,
                 data_ref:"blue"
             },{
                 x: 100,
-                y: 104,
+                y: 100,
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(255,255,0,1)',
-                stroke: 'black',
+                stroke: 'white',
                 strokeWidth: 1,
                 rotation: 90,
                 data_ref:"yellow"
