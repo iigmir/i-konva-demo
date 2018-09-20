@@ -18,8 +18,6 @@
                         innerRadius: 70,
                         outerRadius: 70,
                         fill: 'red',
-                        stroke: 'black',
-                        strokeWidth: 4
                     }" />
                     <v-star v-bind:config="{
                         x: 600,
