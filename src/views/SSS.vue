@@ -15,7 +15,7 @@
                     y:100,
                     radius: 40,
                     fill: 'navy',
-                    stroke: 'white',
+                    stroke: '#ddd',
                     strokeWidth: 4
                     
                 }" />
@@ -38,6 +38,7 @@
                 />
             </v-layer>
         </v-stage>
+        <p> <a target="_blank" href="https://en.wikipedia.org/wiki/Simon_(game)">Simon game</a> </p>
     </div>
 </template>
 
@@ -53,7 +54,7 @@ export default {
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(255,0,0,1)',
-                stroke: 'white',
+                stroke: '#111',
                 strokeWidth: 1,
                 rotation: 180,
                 data_ref:"red"
@@ -63,7 +64,7 @@ export default {
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(0,255,0,1)',
-                stroke: 'white',
+                stroke: '#111',
                 strokeWidth: 1,
                 rotation: 270,
                 data_ref:"green"
@@ -73,7 +74,7 @@ export default {
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(0,0,255,1)',
-                stroke: 'white',
+                stroke: '#111',
                 strokeWidth: 1,
                 rotation: 0,
                 data_ref:"blue"
@@ -83,7 +84,7 @@ export default {
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(255,255,0,1)',
-                stroke: 'white',
+                stroke: '#111',
                 strokeWidth: 1,
                 rotation: 90,
                 data_ref:"yellow"
