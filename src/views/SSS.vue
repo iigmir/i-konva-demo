@@ -113,6 +113,8 @@ export default {
                     y: 50
                 },
                 fill: 'aqua',
+                stroke: 'black',
+                strokeWidth: 1,
             },
             questiontext_array:[],
         }
