@@ -1,6 +1,9 @@
 <template>
     <div>
         <v-stage v-bind:config="$store.state.canvas_measure">
+            <v-layer ref="larry_layer">
+                <v-image ref="larry" v-bind:config="larry_conf" />
+            </v-layer>
             <v-layer ref="yane">
                 <v-text-path v-bind:config="tp_conf" />
                 <v-rect v-bind:config="entou_conf"/>
@@ -13,9 +16,7 @@
                 <v-wedge v-bind:config="door_window_conf" />
                 <v-rect v-bind:config="door_conf"/>
             </v-layer>
-            <v-layer ref="larry_layer">
-                <v-image ref="larry" v-bind:config="larry_conf" />
-            </v-layer>
+            
         </v-stage>
         <p> Reference of <code>v-text-path</code>: <a target="_blank" href="https://hellopoetry.com/poem/2609113/house-of-broken-dreams/"> House of Broken Dreams </a> </p>
         <!-- https://www.html5rocks.com/zh/tutorials/canvas/performance/ -->
@@ -130,7 +131,7 @@ export default {
             img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Bob2002.svg/320px-Bob2002.svg.png";
             return {
                 x: 500,
-                y: 120,
+                y: 100,
                 width: 128,
                 height: 96,
                 image: img
