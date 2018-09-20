@@ -5,9 +5,48 @@
             <v-stage class="red-circle" v-bind:config="$store.state.canvas_measure">
                 <v-layer>
                     <v-circle v-bind:config="configCircle" />
+                    <v-text ref="ktext" :config="{
+                        x: 60, y: 50, fontSize: 108,
+                        text: 'K',
+                        fill: 'white'
+                    }" />
                     <v-rect v-for="(e,i) in rect_conf" v-bind:key="i" v-bind:config="e" />
-                    <v-star v-bind:config="star_conf" />
-                    <v-image v-bind:config="img_conf" />
+                    <v-star v-bind:config="{
+                        x: 600,
+                        y: 150,
+                        numPoints: 3,
+                        innerRadius: 70,
+                        outerRadius: 70,
+                        fill: 'red',
+                        stroke: 'black',
+                        strokeWidth: 4
+                    }" />
+                    <v-star v-bind:config="{
+                        x: 600,
+                        y: 150,
+                        numPoints: 3,
+                        innerRadius: 50,
+                        outerRadius: 50,
+                        fill: 'red',
+                        stroke: 'white',
+                        strokeWidth: 4
+                    }" />
+                    <v-star v-bind:config="{
+                        x: 600,
+                        y: 150,
+                        numPoints: 3,
+                        innerRadius: 48,
+                        outerRadius: 48,
+                        fill: 'white',
+                        stroke: 'red',
+                        strokeWidth: 4
+                    }" />
+                    <v-text ref="ktext" :config="{
+                        x: 564, y: 116, fontSize: 72,
+                        text: '萬',
+                        fill: 'red'
+                    }" />
+                    <!-- <v-image v-bind:config="img_conf" /> -->
                 </v-layer>
                 <!-- <v-layer rel="samsung">
                     <v-ellipse v-bind:config="samsung.c" />
