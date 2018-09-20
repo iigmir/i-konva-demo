@@ -60,7 +60,7 @@ export default {
                     // special Konva.js method
                     context.fillStrokeShape(this);
                 },
-                fill: '#AAD200',
+                fill: '#AA0012',
             },
             entou_conf: {
                 x: 500, y: 10,
@@ -72,7 +72,7 @@ export default {
                 y: 100,
                 width: 300,
                 height: 100,
-                fill: "#AA0012",
+                fill: "#AACA82",
             },
             windows_conf:[{
                 x:500,
@@ -129,7 +129,7 @@ export default {
             let img = new Image();
             img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Bob2002.svg/320px-Bob2002.svg.png";
             return {
-                x: 120,
+                x: 500,
                 y: 120,
                 width: 128,
                 height: 96,
@@ -139,14 +139,12 @@ export default {
     },
     mounted()
     {
-        const vm = this;
         const amplitude = 200;
-        const period = 5000;
-        // in ms
+        const period = 10000;
         const centerX = 500;
-        const anim = new Konva.Animation(function (frame) {
-            vm.$refs.larry.getStage().setX(amplitude * Math.sin(frame.time * 2 * Math.PI / period) + centerX);
-        }, vm.$refs.larry_layer.getStage());
+        const anim = new Konva.Animation( (frame) => {
+            this.$refs.larry.getStage().setX(amplitude * Math.sin(frame.time * 2 * Math.PI / period) + centerX);
+        }, this.$refs.larry_layer.getStage());
         anim.start();
     },
 }
