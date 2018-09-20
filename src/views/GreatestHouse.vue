@@ -13,7 +13,9 @@
                 <v-wedge v-bind:config="door_window_conf" />
                 <v-rect v-bind:config="door_conf"/>
             </v-layer>
-            <v-layer ref="tsuchi"></v-layer>
+            <v-layer ref="larry_layer">
+                <v-image ref="larry" v-bind:config="larry_conf" />
+            </v-layer>
         </v-stage>
         <p> Reference of <code>v-text-path</code>: <a target="_blank" href="https://hellopoetry.com/poem/2609113/house-of-broken-dreams/"> House of Broken Dreams </a> </p>
         <!-- https://www.html5rocks.com/zh/tutorials/canvas/performance/ -->
@@ -21,6 +23,8 @@
 </template>
 
 <script>
+import Konva from "konva";
+
 export default {
     name: "ghouse",
     data()
@@ -117,6 +121,33 @@ export default {
                 data: 'M5,12 C0,0 10,150 120,100 S350,120 390,50'
             }
         };
-    }
+    },
+    computed:
+    {
+        larry_conf()
+        {
+            let img = new Image();
+            img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Bob2002.svg/320px-Bob2002.svg.png";
+            return {
+                x: 120,
+                y: 120,
+                width: 128,
+                height: 96,
+                image: img
+            };
+        }
+    },
+    mounted()
+    {
+        const vm = this;
+        const amplitude = 200;
+        const period = 5000;
+        // in ms
+        const centerX = 500;
+        const anim = new Konva.Animation(function (frame) {
+            vm.$refs.larry.getStage().setX(amplitude * Math.sin(frame.time * 2 * Math.PI / period) + centerX);
+        }, vm.$refs.larry_layer.getStage());
+        anim.start();
+    },
 }
 </script>
