@@ -37,44 +37,44 @@ export default {
     {
         return {
             wedges:[{
-                x: 120,
-                y: 120,
+                x: 100,
+                y: 100,
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(255,0,0,1)',
                 stroke: 'black',
                 strokeWidth: 1,
-                rotation: -120,
+                rotation: 180,
                 data_ref:"red"
             },{
-                x: 240,
-                y: 120,
+                x: 104,
+                y: 100,
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(0,255,0,1)',
                 stroke: 'black',
                 strokeWidth: 1,
-                rotation: -120,
+                rotation: 270,
                 data_ref:"green"
             },{
-                x: 360,
-                y: 120,
+                x: 104,
+                y: 104,
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(0,0,255,1)',
                 stroke: 'black',
                 strokeWidth: 1,
-                rotation: -120,
+                rotation: 0,
                 data_ref:"blue"
             },{
-                x: 480,
-                y: 120,
+                x: 100,
+                y: 104,
                 radius: 80,
                 angle: 90,
                 fill: 'rgba(255,255,0,1)',
                 stroke: 'black',
                 strokeWidth: 1,
-                rotation: -120,
+                rotation: 90,
                 data_ref:"yellow"
             }],
             choosen_text: "You choosed: ",
