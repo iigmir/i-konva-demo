@@ -2,7 +2,7 @@
     <div class="vka">
         <h1> Vue-Konva </h1>
         <ul>
-            <li> 前面說過 Vue + Konva == vue-konva  </li>
+            <li> 前面說過 <router-link to="/about">Vue + Konva == vue-konva</router-link>  </li>
             <li>
                 你可以使用 HTML 的語法，來撰寫 Konva 的元件：
                 <v-stage v-bind:config="{ width:100, height:100 }">

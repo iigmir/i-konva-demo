@@ -34,7 +34,7 @@
                 </ul>
             </dd>
             <dt> <a target="_blank" href="https://github.com/konvajs/vue-konva">vue-konva</a> </dt>
-            <dd> Vue + Konva == vue-konva </dd>
+            <dd> <router-link to="/vuekonva">Vue + Konva == vue-konva</router-link> </dd>
         </dl>
     </div>
 </template>
