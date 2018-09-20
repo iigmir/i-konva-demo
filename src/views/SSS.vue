@@ -10,6 +10,10 @@
                     v-on:mouseover="cursor_change('pointer')"
                     v-on:mouseout="cursor_change('default')"
                 />
+                <v-text ref="questiontext_ref" v-bind:config="questiontext_conf" />
+                <v-text ref="helptext_ref" v-bind:config="helptext" />
+            </v-layer>
+            <v-layer ref="clearbtn_layer">
                 <v-ellipse
                     v-bind:config="btn_conf"
                     v-on:click="clear_text()"
@@ -23,8 +27,6 @@
                     v-on:mouseover="cursor_change('pointer')"
                     v-on:mouseout="cursor_change('default')"
                 />
-                <v-text ref="questiontext_ref" v-bind:config="questiontext_conf" />
-                <v-text ref="helptext_ref" v-bind:config="helptext" />
             </v-layer>
         </v-stage>
     </div>
@@ -88,24 +90,24 @@ export default {
                 fill: "white"
             },
             questiontext_conf: {
-                x: 90,
-                y: 200,
+                x: 200,
+                y: 50,
                 text: "Let's choose: ",
                 fontSize: 24,
                 fontFamily: 'Calibri',
                 fill: "black"
             },
             btntxt_conf:{
-                x: 610,
-                y: 100,
+                x: 270,
+                y: 140,
                 text: "Clear",
                 fontSize: 24,
                 fontFamily: 'Calibri',
                 fill: "black"
             },
             btn_conf:{
-                x: 640,
-                y: 120,
+                x: 300,
+                y: 150,
                 radius: {
                     x: 100,
                     y: 50
@@ -153,7 +155,7 @@ export default {
             }
             else
             {
-                alert("Wrong choose");
+                alert("Game over: Choose wrong!");
                 this.clear_text();
             }
         },
