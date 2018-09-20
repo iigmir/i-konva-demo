@@ -3,6 +3,7 @@
         <v-stage v-bind:config="$store.state.canvas_measure">
             <v-layer ref="yane">
                 <v-text-path v-bind:config="tp_conf" />
+                <v-rect v-bind:config="entou_conf"/>
                 <!-- <v-shape v-bind:config="dhouse_conf"/> -->
                 <v-shape v-bind:config="yane_conf"/>
             </v-layer>
@@ -57,6 +58,11 @@ export default {
                 },
                 fill: '#AAD200',
             },
+            entou_conf: {
+                x: 500, y: 10,
+                width: 30, height: 100,
+                fill: "grey",
+            },
             kabe_conf: {
                 x: 400,
                 y: 100,
@@ -103,13 +109,12 @@ export default {
                 rotationDeg: -120
             },
             tp_conf: {
-                x: 0,
-                y: 10,
+                x: 10, y: 30,
                 fill: '#333',
                 fontSize: 16,
                 fontFamily: 'Arial',
-                text: "This two-story building made out of bricks is a place that should not...",
-                data: 'M5,12 C0,0 10,150 120,100 S350,120 400,50'
+                text: "This two-story building made out of bricks is a place that shouldn't...",
+                data: 'M5,12 C0,0 10,150 120,100 S350,120 390,50'
             }
         };
     }
