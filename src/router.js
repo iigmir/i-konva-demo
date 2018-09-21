@@ -5,6 +5,7 @@ import SSS from "./views/SSS.vue";
 import GHouse from "./views/GreatestHouse.vue";
 import VKA from "./views/vka.vue";
 import Proto1 from "./views/prototype/Proto1.vue";
+import Enies from "./views/Enies.vue";
 
 Vue.use(Router)
 
@@ -36,5 +37,9 @@ export default new Router({
         path: "/proto1",
         name: "proto1",
         component: Proto1
+    }, {
+        path: "/enies",
+        name: "enies",
+        component: Enies
     }]
 })
