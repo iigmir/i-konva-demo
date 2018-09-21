@@ -68,7 +68,7 @@ export default {
             rect_conf:
             [{
                 x: 300,
-                y: 50,
+                y: 75,
                 width: 100,
                 height: 100,
                 fill: "blue",
@@ -76,7 +76,7 @@ export default {
                 opacity: 0.9
             },{
                 x: 350,
-                y: 50,
+                y: 75,
                 width: 100,
                 height: 100,
                 fill: "red",
