@@ -5,9 +5,15 @@
             <v-stage class="red-circle" v-bind:config="$store.state.canvas_measure">
                 <v-layer>
                     <v-group ref="konvalogo">
-                        <v-circle v-bind:config="configCircle" />
+                        <v-circle v-bind:config="{
+                            x: 940, y: 140,
+                            radius: 70,
+                            fill: 'green',
+                            stroke: 'black',
+                            strokeWidth: 2
+                        }" />
                         <v-text ref="ktext" v-bind:config="{
-                            x: 900, y: 50, fontSize: 108,
+                            x: 900, y: 85, fontSize: 108,
                             text: 'K',
                             fill: 'white'
                         }" />
@@ -24,19 +30,6 @@
                             v-bind:config="t"
                         />
                     </v-group>
-                    <!-- <v-line v-bind:config="{
-                        x: 100,
-                        y: 50,
-                        points: [
-                            73, 70,
-                            340, 23,
-                            450, 60,
-                            500, 20,
-                            690, 120
-                        ],
-                        stroke: 'red',
-                        tension: 1
-                    }" /> -->
                     <v-line v-bind:config="{
                         x: 50,
                         y: 50,
@@ -92,21 +85,21 @@ export default {
             }],
             vue_triangle:
             [{
-                x: 780,
+                x: 730,
                 y: 120,
                 sides: 3,
                 radius: 80,
                 rotation: 60,
                 fill: 'green',
             },{
-                x: 780,
+                x: 730,
                 y: 105,
                 sides: 3,
                 radius: 50,
                 rotation: 60,
                 fill: 'black',
             },{
-                x: 780,
+                x: 730,
                 y: 90,
                 sides: 3,
                 radius: 20,
@@ -115,14 +108,14 @@ export default {
             }],
             kiuuman_kado:
             [{
-                x: 600,
+                x: 540,
                 y: 150,
                 numPoints: 3,
                 innerRadius: 70,
                 outerRadius: 70,
                 fill: 'red',
             },{
-                x: 600,
+                x: 540,
                 y: 150,
                 numPoints: 3,
                 innerRadius: 50,
@@ -131,7 +124,7 @@ export default {
                 stroke: 'white',
                 strokeWidth: 4
             },{
-                x: 600,
+                x: 540,
                 y: 150,
                 numPoints: 3,
                 innerRadius: 48,
@@ -141,8 +134,8 @@ export default {
                 strokeWidth: 4
             }],
             kiuuman_text:{
-                x: 564,
-                y: 116,
+                x: 503,
+                y: 117,
                 fontSize: 72,
                 text: '萬',
                 fill: 'red'
