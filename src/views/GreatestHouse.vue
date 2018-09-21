@@ -108,7 +108,7 @@ export default {
                 height: 50,
                 fill: "white",
             },
-            arc_conf:{
+            arc_conf: {
                 x:200,
                 y:100,
                 innerRadius: 40,
@@ -126,7 +126,9 @@ export default {
                 fontFamily: 'Arial',
                 text: "This two-story building made out of bricks is a place that shouldn't...",
                 data: 'M5,12 C0,0 10,150 120,100 S350,120 390,50'
-            }
+            },
+            larry_animate: null,
+            got_larry: false
         };
     },
     computed:
@@ -146,23 +148,37 @@ export default {
     },
     mounted()
     {
-        const amplitude = 200;
-        const period = 10000;
-        const centerX = 500;
-        const anim = new Konva.Animation( (frame) => {
-            this.$refs.larry.getStage().setX(amplitude * Math.sin(frame.time * 2 * Math.PI / period) + centerX);
-        }, this.$refs.larry_layer.getStage());
-        anim.start();
+        this.start_hiding();
     },
     methods:
     {
+        start_hiding()
+        {
+            const amplitude = 200;
+            const period = 10000;
+            const centerX = 500;
+            // this.larry_animate
+            this.larry_animate = new Konva.Animation( (frame) => {
+                this.$refs.larry.getStage().setX(amplitude * Math.sin(frame.time * 2 * Math.PI / period) + centerX);
+            }, this.$refs.larry_layer.getStage());
+            this.larry_animate.start();
+        },
         cursor_change( input )
         {
-            document.body.style.cursor = input;
+            if( !this.got_larry )
+            {
+                document.body.style.cursor = input;
+            }
         },
         yougotme()
         {
-            alert("Bob 被抓到了");
+            if( !this.got_larry )
+            {
+                this.got_larry = true;
+                alert("Bob 被抓到了");
+                this.larry_animate.stop();
+                document.body.style.cursor = "default";
+            }
         }
     }
 }
