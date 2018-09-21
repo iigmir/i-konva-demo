@@ -1,13 +1,16 @@
 <template>
     <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link> |
-        <router-link to="/vuekonva">Vue Konva</router-link> |
-        <!-- <router-link to="/proto1">Prototype 1</router-link> | -->
-        <!-- <router-link to="/proto3">Prototype 3</router-link> | -->
-        <!-- <router-link to="/proto4">Prototype 4</router-link> | -->
-        <router-link to="/ghouse">Hide and seek at Bob's house</router-link> |
-        <router-link to="/simon">Simon game</router-link> |
+        <div>
+            <router-link to="/">Home</router-link> |
+            <router-link to="/about">About</router-link> |
+            <router-link to="/vuekonva">Vue Konva</router-link> |
+            <router-link to="/ghouse">Hide and seek at Bob's house</router-link> |
+            <router-link to="/simon">Simon game</router-link> |
+        </div>
+        <br />
+        <div hidden>
+            <router-link to="/proto1">Prototype1</router-link> |
+        </div>
     </nav>
 </template>
 
